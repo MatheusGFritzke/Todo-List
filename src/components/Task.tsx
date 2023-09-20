@@ -5,8 +5,8 @@ import deleteIconRed from "../assets/lixeira-vermelha.svg"
 
 interface TaskProps {
     text: string,
-    deleteTask: any,
-    changeCheckedTask: any,
+    deleteTask: (id: string) => void,
+    changeCheckedTask: (data: { id: string, checked: boolean }) => void,
     id: string,
     checked: boolean
 }
@@ -35,7 +35,7 @@ export function Task({ text, deleteTask, changeCheckedTask, id, checked }: TaskP
     return (
         <div className={style.mainDiv}>
             <div className={style.taskDiv}>
-                <input className={style.checkbox} type="checkbox" onChange={handleCheckedTask} checked={checked} /> 
+                <input className={style.checkbox} type="checkbox" onChange={handleCheckedTask} checked={checked} />
                 <span>
                     {text}
                 </span>

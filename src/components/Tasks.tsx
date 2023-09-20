@@ -64,8 +64,8 @@ export function Tasks() {
     function changeCheckedTask(object: TaskChecked) {
         let quantityChecked = 0;
         
-        let updatedCheckedTasks = tasks;
-        for (let task of updatedCheckedTasks) {
+        const updatedCheckedTasks = tasks;
+        for (const task of updatedCheckedTasks) {
             if (task.id === object.id) {
                 task.checked = object.checked;
             }
