@@ -60,17 +60,17 @@ export function Tasks() {
             return value - 1;
         });
     }
-    
-    function changeCheckedTask(object: TaskChecked) {
+
+    function changeCheckedTask({ id, checked }: TaskChecked) {
         let quantityChecked = 0;
-        
+
         const updatedCheckedTasks = tasks;
         for (const task of updatedCheckedTasks) {
-            if (task.id === object.id) {
-                task.checked = object.checked;
+            if (task.id === id) {
+                task.checked = checked;
             }
-            if(task.checked) quantityChecked +=1;
-        }        
+            if (task.checked) quantityChecked += 1;
+        }
         setTasks(updatedCheckedTasks);
         setQuantityChecked(quantityChecked);
     }
@@ -110,14 +110,14 @@ export function Tasks() {
                     </div>
                 </header>
                 <div className={style.taskDiv}>
-                    {tasks.length === 0 ? 
-                    <div className={style.notFoundTasks}>
-                        <img src={clipBoard}/>
-                        <span>Você ainda não tem tarefas cadastradas</span>
-                        <span>Crie tarefas e organize seus itens a fazer</span>
-                    </div>
-                    
-                    : undefined}
+                    {tasks.length === 0 ?
+                        <div className={style.notFoundTasks}>
+                            <img src={clipBoard} />
+                            <span>Você ainda não tem tarefas cadastradas</span>
+                            <span>Crie tarefas e organize seus itens a fazer</span>
+                        </div>
+
+                        : undefined}
                     {tasks.map((task) => (
                         <Task
                             text={task.text}
