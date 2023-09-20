@@ -1,0 +1,41 @@
+.inputText {
+    width: 39.875rem;
+    height: 3.375rem;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-700);
+    background: var(--gray-500);
+    color: var(--gray-300);
+}
+
+.inputText:hover {
+    cursor: pointer;
+}
+
+.inputButton:hover {
+    cursor: pointer;
+    background: var(--blue);
+}
+
+.inputDiv {
+    gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -1.6875rem;
+}
+
+.inputButton{
+    display: flex;
+    width: 5.625rem;
+    height: 3.375rem;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: none;
+    background: var(--blue-dark);
+    gap: 8px;
+    color: var(--white);
+    font-size: 0.875rem;
+}
